@@ -1,0 +1,167 @@
+//    main.scss
+//        Author:         Jack
+//        Date:           2022-12-05
+//        Last revised:   2022-12-16 
+//        Description:    CSS for IP Lookup project
+
+// Variables
+$lt-gray: #555;
+$white: #eee;
+
+// older browser compatibility
+header, section, footer, aside, 
+nav, main, article, figure {
+  display: block;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  content: "";
+  clear: both;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+// top header
+h1 {
+  background: $lt-gray;
+  color: $white;
+  width: 100%;
+  padding: 5px;
+  margin: 0 0 10px 0;
+
+  img {
+    display: block;
+    float: right;
+    margin-right: 50px;
+    margin-top: 3px;
+    width: 40px;
+  }
+}
+
+hr {
+  width: 100%;
+  border-width: 1px;
+}
+
+// these will be span elements
+// styled to work as buttons
+.span-btn {
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  margin: 20px 10px;
+  border: .5px solid $lt-gray;
+  border-radius: 50px;
+  text-align: center;
+  padding-top: 5px;
+  cursor: pointer;
+
+  &:hover {
+    transition: .2s;
+    background: $lt-gray;
+    color: $white;
+  }
+}
+
+// could probably have just used a form
+// here, but a div styled as below works
+// nicely
+.form {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+}
+
+// container div for Submit & Reset
+// buttons
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+// input field
+#ip {
+  font-size: 1.2rem;
+  padding: 5px;
+  width: 240px;
+  text-align: center;
+  outline: 0.5px solid $lt-gray;
+  border-width: 0;
+}
+
+// output table
+#ipInfo {
+  min-width: 350px;
+  max-width: 400px;
+  margin: 20px auto;
+  border: .5px solid #aaa;
+
+  // data & header cells
+  td,
+  th {
+    font-size: 1rem;
+    padding: 5px;
+    vertical-align: top;
+  }
+
+  // first row
+  tr:first-child { 
+    font-weight: bold;
+  }
+
+  // last row
+  tr:last-child {
+    text-align: center;
+    font-weight: bold;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+  }
+
+  // even rows
+  tr:nth-child(even) {
+    background: $white;
+  }
+
+  // word breaking for the 
+  // second column
+  td:nth-child(even) {
+    word-break: break-all;
+  }
+} // (end of ipInfo table)
+
+// output reset button (starts
+// out hidden
+#resetInfo {
+  display: none;
+}
+
+// watermark pic
+#watermark {
+    position: fixed;
+    bottom: 7px;
+    left: -120px;
+    width: 450px;
+    opacity: .03;
+    transform: rotate(15deg);
+}
+
+// Map stuff
+#map {
+  display: none;
+  height: 300px;
+  max-width: 75%;
+  margin: 20px auto;
+  border: .5px solid $lt-gray;
+}
+
+// #latlng {
+//   width: 225px;
+// }
+

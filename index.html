@@ -1,0 +1,97 @@
+<!--
+  --    index.html
+  --        Author:         
+  --        Date:           
+  --        Last revised:   
+  --        Description:    Using jQ to do asynchronous lookup (using fetch
+  --                        of user-input IP addresses)
+  -->
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name="author" content="Jack">
+	<meta name="date" content="2022-12-05">
+	<meta name="last revised" content="2026-04-29">
+	<meta name="description" content="Async lookup w/ APIs">
+	<meta name="keywords" content="CSCI 1720, JavaScript, asynchronous, fetch, ipinfo.io, Google Maps">
+	<title>IP Lookup</title>
+	<link rel='icon' href='media/icon.png'>
+	
+	<!-- Stylesheets -->
+	<link rel='stylesheet' href='css/bootstrap.min.css'>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link rel='stylesheet' href='css/main.css'>
+
+	<!-- used for map generation -->
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+</head>
+<body>
+	<h1>
+		IP Lookup
+		<img src="media/icon.png" alt="logo">
+	</h1>
+	<div class="container">
+		<img src="media/icon.png" alt="icon" id="watermark">
+		<div class="row">  <!-- form container -->
+			<div class="col-sm-12">
+				<div class="form">
+					<input type="text" id="ip" placeholder="IP address" autofocus><br>
+					<div class="buttons">
+						<span class="span-btn" id="submit">Submit</span>
+						<span class="span-btn" id="reset">Reset</span>
+					</div>
+				</div>
+			</div>
+			<hr>
+		</div>
+		
+		<!-- Output -->
+		<h2 id="outHeading"></h2>
+		<div class="row" id="row2"><br>
+			<div class="col-sm-6">
+				<div class="output" id="output">
+					<table id="ipInfo"></table>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div id="map"></div>
+			</div>
+		</div>
+		
+		<!-- reset output button holder-->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="buttons" id="buttons">
+					<span class="span-btn" id="resetInfo">Reset</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- scripts -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- <script src='js/ie-emulation-modes-warning.js'></script>
+	<script src='js/ie10-viewport-bug-workaround.js'></script>
+	<script src='js/jQuery3.6.1.min.js'></script> -->
+	<script src='js/lookup.js'></script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANS6t3jynVLbXg4B02z7fAmTK4IzTOr-I&v=weekly" 
+	async defer -->
+	></script>
+	<!-- <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANS6t3jynVLbXg4B02z7fAmTK4IzTOr-I&libraries=maps,marker" defer
+></script> -->
+<script>
+  (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+    key: "AIzaSyANS6t3jynVLbXg4B02z7fAmTK4IzTOr-I",
+    v: "weekly",
+    // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+    // Add other bootstrap parameters as needed, using camel case.
+  });
+</script>
+</body>
+</html>
